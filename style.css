@@ -1,20 +1,19 @@
-/* Color Palette & Design System - Tactical Brutalist */
+/* Color Palette & Design System - Premium Clean */
 
 :root {
-    --bg-color: #0d0d0d;
-    --bg-alt: #151515;
-    --card-bg: #1a1a1a;
-    --card-border: #333333;
-    --text-color: #d1d1d1;
-    --text-muted: #888888;
-    --accent-yellow: #f5c518;
-    --accent-yellow-hover: #e0b416;
+    --bg-color: #0f1012;
+    --bg-alt: #16181b;
+    --card-bg: #1c1e22;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-color: #d1d5db;
+    --text-muted: #9ca3af;
+    --accent-yellow: #f2b90f;
+    --accent-yellow-hover: #e0a90d;
     --white: #ffffff;
     --font-main: 'Inter', sans-serif;
     --font-heading: 'Outfit', sans-serif;
     
-    /* Solid colors replacing gradients for rugged look */
-    --gold-gradient: var(--accent-yellow);
+    --soft-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
 html {
@@ -38,10 +37,9 @@ body {
 h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--white);
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.01em;
 }
 
 span {
@@ -60,9 +58,9 @@ span {
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 15px;
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .subtitle {
@@ -72,11 +70,11 @@ span {
     margin: 0 auto;
 }
 
-/* Navbar - Flat & Solid */
+/* Navbar - Clean & Solid */
 .navbar {
-    background: #000000;
+    background: #090a0b;
     padding: 15px 0;
-    border-bottom: 2px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -91,58 +89,55 @@ span {
 .logo {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
     color: var(--white);
 }
 
-/* Buttons - Brutalist */
+/* Buttons - Premium Clean */
 .btn {
     display: inline-block;
-    padding: 14px 28px;
+    padding: 14px 30px;
     text-decoration: none;
-    font-weight: 800;
-    border-radius: 2px;
-    transition: all 0.15s ease;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: all 0.2s ease;
     text-align: center;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: none;
     font-family: var(--font-main);
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .btn-sm {
     padding: 10px 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .btn-primary {
     background: var(--accent-yellow);
-    color: #000;
+    color: #111;
+    box-shadow: 0 4px 15px rgba(242, 185, 15, 0.2);
 }
 
 .btn-primary:hover {
-    background: #000;
-    color: var(--accent-yellow);
-    border-color: var(--accent-yellow);
+    background: var(--accent-yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(242, 185, 15, 0.3);
 }
 
 .btn-outline {
     background-color: transparent;
     color: var(--accent-yellow);
-    border: 2px solid var(--accent-yellow);
+    border: 1px solid var(--accent-yellow);
 }
 
 .btn-outline:hover {
-    background-color: var(--accent-yellow);
-    color: #000;
+    background-color: rgba(242, 185, 15, 0.08);
 }
 
 .btn-large {
     padding: 18px 45px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 .btn-block {
@@ -155,7 +150,7 @@ span {
     position: relative;
     padding: 100px 0;
     background-color: var(--bg-alt);
-    border-bottom: 2px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .hero-bg {
@@ -167,7 +162,7 @@ span {
     background-image: url('hero-bg.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.12;
     z-index: 0;
 }
 
@@ -185,29 +180,29 @@ span {
 
 .badge {
     display: inline-block;
-    background-color: #000;
+    background-color: rgba(242, 185, 15, 0.1);
     color: var(--accent-yellow);
-    border: 2px solid var(--accent-yellow);
+    border: 1px solid rgba(242, 185, 15, 0.2);
     padding: 6px 14px;
-    border-radius: 2px;
+    border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 25px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .hero-text h1 {
-    font-size: 3.8rem;
-    margin-bottom: 25px;
-    font-weight: 900;
-    line-height: 1.1;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .hero-text p {
     font-size: 1.15rem;
     margin-bottom: 35px;
-    color: #b0b0b0;
+    color: var(--text-muted);
 }
 
 .hero-benefits {
@@ -218,8 +213,8 @@ span {
 .hero-benefits li {
     font-size: 1.05rem;
     margin-bottom: 12px;
-    font-weight: 600;
-    color: var(--white);
+    font-weight: 500;
+    color: var(--text-color);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -238,7 +233,7 @@ span {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.9));
+    filter: drop-shadow(0 25px 40px rgba(0,0,0,0.5));
 }
 
 /* General Sections */
@@ -249,7 +244,6 @@ section {
 /* Problem Solution */
 .problem-solution {
     background-color: var(--bg-color);
-    border-bottom: 2px solid var(--card-border);
 }
 
 .content-grid {
@@ -262,7 +256,7 @@ section {
 .text-block p {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #c0c0c0;
+    color: var(--text-muted);
 }
 
 .text-block strong {
@@ -272,33 +266,34 @@ section {
 .text-block.highlight {
     background: var(--card-bg);
     padding: 40px;
-    border-radius: 2px;
-    border: 2px solid var(--card-border);
-    border-left: 6px solid var(--accent-yellow);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--accent-yellow);
+    box-shadow: var(--soft-shadow);
 }
 
 .text-block.highlight p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-style: italic;
     color: var(--white);
     margin-bottom: 20px;
     font-family: var(--font-heading);
-    text-transform: uppercase;
 }
 
 .author-quote {
     display: block;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--accent-yellow);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 /* Features */
 .what-you-learn {
     background-color: var(--bg-alt);
-    border-bottom: 2px solid var(--card-border);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .features-grid {
@@ -310,25 +305,26 @@ section {
 .feature-card {
     background: var(--card-bg);
     padding: 40px 30px;
-    border-radius: 2px;
-    border: 2px solid var(--card-border);
-    transition: all 0.15s ease;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    transition: all 0.2s ease;
 }
 
 .feature-card:hover {
-    border-color: var(--accent-yellow);
-    background: #000;
+    transform: translateY(-5px);
+    box-shadow: var(--soft-shadow);
+    border-color: rgba(255,255,255,0.15);
 }
 
 .feature-number {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--accent-yellow);
     margin-bottom: 20px;
     line-height: 1;
 }
 
 .feature-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     margin-bottom: 15px;
 }
 
@@ -339,12 +335,10 @@ section {
 
 /* Guarantee */
 .guarantee {
-    background: var(--accent-yellow);
-    color: #000;
-    padding: 70px 0;
+    background: #090a0b;
+    padding: 80px 0;
     position: relative;
-    border-top: 4px solid #000;
-    border-bottom: 4px solid #000;
+    border-top: 1px solid rgba(255,255,255,0.03);
 }
 
 .guarantee-content {
@@ -357,27 +351,27 @@ section {
 }
 
 .guarantee-icon {
-    font-size: 5rem;
-    color: #000;
+    font-size: 4.5rem;
+    color: var(--accent-yellow);
 }
 
 .guarantee-text h2 {
-    color: #000;
+    color: var(--white);
     margin-bottom: 15px;
-    font-weight: 900;
+    font-size: 2rem;
 }
 
 .guarantee-text p {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.1rem;
     max-width: 600px;
-    color: #000;
+    color: var(--text-muted);
 }
 
 /* Author */
 .author {
     background-color: var(--bg-color);
-    border-bottom: 2px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .author-container {
@@ -389,16 +383,17 @@ section {
 }
 
 .author-image {
-    flex: 0 0 300px;
+    flex: 0 0 250px;
 }
 
 .author-image img {
     width: 100%;
     height: auto;
+    border-radius: 50%;
+    border: 2px solid rgba(242, 185, 15, 0.3);
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--accent-yellow);
+    box-shadow: var(--soft-shadow);
 }
 
 .author-text {
@@ -407,12 +402,12 @@ section {
 }
 
 .author-text h2 {
-    margin-bottom: 25px;
-    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
 }
 
 .author-text p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
 }
 
@@ -424,12 +419,12 @@ section {
 }
 
 .cta-section > h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .cta-section > p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin-bottom: 60px;
     color: var(--text-muted);
     max-width: 700px;
@@ -438,26 +433,34 @@ section {
 }
 
 .price-box {
-    background: #000;
+    background: var(--card-bg);
     padding: 50px;
     display: inline-block;
-    border-radius: 2px;
-    border: 3px solid var(--accent-yellow);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
     max-width: 480px;
     width: 100%;
     text-align: left;
     position: relative;
+    box-shadow: var(--soft-shadow);
+}
+
+.price-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background: var(--accent-yellow);
+    border-radius: 8px 8px 0 0;
 }
 
 .price-header {
-    font-size: 1.3rem;
-    font-weight: 900;
+    font-size: 1.25rem;
+    font-weight: 800;
     color: var(--white);
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
 }
 
 .price-benefits {
@@ -467,7 +470,7 @@ section {
 
 .price-benefits .value-item {
     padding: 14px 0;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
@@ -480,8 +483,7 @@ section {
     align-items: flex-start;
     gap: 10px;
     line-height: 1.4;
-    color: var(--white);
-    font-weight: 600;
+    color: var(--text-color);
 }
 
 .item-desc i {
@@ -493,7 +495,6 @@ section {
 .item-price {
     color: var(--text-muted);
     white-space: nowrap;
-    font-weight: 700;
 }
 
 .total-original {
@@ -502,8 +503,8 @@ section {
     align-items: center;
     padding-top: 20px;
     margin-top: 10px;
-    border-top: 2px solid var(--card-border);
-    font-weight: 800;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-weight: 700;
     font-size: 1.1rem;
     color: var(--white);
 }
@@ -523,20 +524,20 @@ section {
 }
 
 .currency {
-    font-weight: 800;
+    font-weight: 700;
     color: var(--text-muted);
     margin-right: 8px;
 }
 
 .price-value {
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 1;
     color: var(--accent-yellow);
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .cents {
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .secure {
@@ -548,19 +549,18 @@ section {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-weight: 600;
 }
 
 /* FAQ Section */
 .faq {
     background-color: var(--bg-color);
-    border-bottom: 2px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
 
 .faq-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -568,17 +568,18 @@ section {
 .faq-item {
     background: var(--card-bg);
     padding: 35px;
-    border-radius: 2px;
-    border: 2px solid var(--card-border);
-    transition: all 0.15s ease;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    transition: all 0.2s ease;
 }
 
 .faq-item:hover {
-    border-color: var(--accent-yellow);
+    border-color: rgba(255,255,255,0.15);
+    box-shadow: var(--soft-shadow);
 }
 
 .faq-item h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -590,14 +591,14 @@ section {
 }
 
 .faq-item p {
-    color: #b0b0b0;
+    color: var(--text-muted);
     font-size: 1rem;
     margin-left: 32px;
 }
 
 /* Footer */
 footer {
-    background-color: #000;
+    background-color: #050505;
     padding: 60px 0 40px;
     text-align: center;
 }
@@ -605,16 +606,16 @@ footer {
 .logo-footer {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    font-weight: 900;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: var(--white);
     margin-bottom: 20px;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 footer p {
-    color: #555;
+    color: #666;
     font-size: 0.9rem;
     margin-bottom: 10px;
 }
@@ -634,7 +635,7 @@ footer p {
     }
     
     .hero-text h1 {
-        font-size: 3rem;
+        font-size: 2.4rem;
     }
 
     .hero-benefits {
@@ -663,7 +664,7 @@ footer p {
 
     .author-image {
         flex: 0 0 auto;
-        max-width: 250px;
+        max-width: 200px;
     }
     
     .author-text {
