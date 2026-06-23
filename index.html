@@ -251,8 +251,23 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Lenis Momentum Scrolling
+            const lenis = new Lenis({
+                duration: 1.8, // Aumenta o tempo de deslize para dar o efeito de não parar na hora
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Intersection Observer (Fade-in Reveal)
             const targets = document.querySelectorAll('.hero-text, .hero-image, .section-header, .text-block, .feature-card, .author-image, .author-text, .guarantee-content, .price-box, .faq-item, .cta-section > h2, .cta-section > p');
             targets.forEach(target => target.classList.add('reveal'));
 
