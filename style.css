@@ -397,7 +397,6 @@ section {
     height: auto;
     border-radius: 2px;
     border: 4px solid var(--accent-yellow);
-    filter: grayscale(100%) contrast(1.2);
 }
 
 .author-text {
