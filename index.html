@@ -250,6 +250,31 @@
                 substituindo o treinamento de estande.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targets = document.querySelectorAll('.hero-text, .hero-image, .section-header, .text-block, .feature-card, .author-image, .author-text, .guarantee-content, .price-box, .faq-item, .cta-section > h2, .cta-section > p');
+            targets.forEach(target => target.classList.add('reveal'));
+
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            targets.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
 </body>
 
 </html>
