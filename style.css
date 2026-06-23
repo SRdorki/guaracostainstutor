@@ -1,22 +1,20 @@
-/* Color Palette & Design System */
+/* Color Palette & Design System - Tactical Brutalist */
 
 :root {
-    --bg-color: #050505;
-    --bg-alt: #0d0d0d;
-    --card-bg: rgba(20, 20, 20, 0.6);
-    --card-border: rgba(255, 255, 255, 0.06);
+    --bg-color: #0d0d0d;
+    --bg-alt: #151515;
+    --card-bg: #1a1a1a;
+    --card-border: #333333;
     --text-color: #d1d1d1;
     --text-muted: #888888;
     --accent-yellow: #f5c518;
+    --accent-yellow-hover: #e0b416;
     --white: #ffffff;
     --font-main: 'Inter', sans-serif;
     --font-heading: 'Outfit', sans-serif;
     
-    /* Premium Gradients and Glows */
-    --gold-gradient: linear-gradient(135deg, #f5c518 0%, #c48b00 100%);
-    --gold-gradient-hover: linear-gradient(135deg, #ffdc4d 0%, #e6a300 100%);
-    --gold-glow: 0 8px 30px rgba(245, 197, 24, 0.25);
-    --glass-blur: blur(12px);
+    /* Solid colors replacing gradients for rugged look */
+    --gold-gradient: var(--accent-yellow);
 }
 
 html {
@@ -35,24 +33,19 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 50%);
-    background-attachment: fixed;
 }
 
 h1, h2, h3 {
     font-family: var(--font-heading);
     color: var(--white);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.2;
-    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 span {
     color: var(--accent-yellow);
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .container {
@@ -79,30 +72,11 @@ span {
     margin: 0 auto;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-on-load {
-    opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Navbar with Glassmorphism */
+/* Navbar - Flat & Solid */
 .navbar {
-    background: rgba(5, 5, 5, 0.75);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    background: #000000;
     padding: 15px 0;
-    border-bottom: 1px solid var(--card-border);
+    border-bottom: 2px solid var(--card-border);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -123,18 +97,20 @@ span {
     color: var(--white);
 }
 
-/* Buttons */
+/* Buttons - Brutalist */
 .btn {
     display: inline-block;
     padding: 14px 28px;
     text-decoration: none;
-    font-weight: 600;
-    border-radius: 6px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-weight: 800;
+    border-radius: 2px;
+    transition: all 0.15s ease;
     text-align: center;
     cursor: pointer;
-    border: none;
+    border: 2px solid transparent;
     font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-sm {
@@ -143,29 +119,25 @@ span {
 }
 
 .btn-primary {
-    background: var(--gold-gradient);
+    background: var(--accent-yellow);
     color: #000;
-    box-shadow: var(--gold-glow);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
-    background: var(--gold-gradient-hover);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(245, 197, 24, 0.4);
+    background: #000;
+    color: var(--accent-yellow);
+    border-color: var(--accent-yellow);
 }
 
 .btn-outline {
     background-color: transparent;
     color: var(--accent-yellow);
-    border: 1px solid var(--accent-yellow);
+    border: 2px solid var(--accent-yellow);
 }
 
 .btn-outline:hover {
-    background-color: rgba(245, 197, 24, 0.1);
-    transform: translateY(-2px);
+    background-color: var(--accent-yellow);
+    color: #000;
 }
 
 .btn-large {
@@ -182,8 +154,8 @@ span {
 .hero {
     position: relative;
     padding: 100px 0;
-    overflow: hidden;
-    background-color: transparent;
+    background-color: var(--bg-alt);
+    border-bottom: 2px solid var(--card-border);
 }
 
 .hero-bg {
@@ -195,10 +167,8 @@ span {
     background-image: url('hero-bg.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.15;
+    opacity: 0.2;
     z-index: 0;
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
 .hero-content {
@@ -215,13 +185,13 @@ span {
 
 .badge {
     display: inline-block;
-    background-color: rgba(245, 197, 24, 0.1);
+    background-color: #000;
     color: var(--accent-yellow);
-    border: 1px solid rgba(245, 197, 24, 0.3);
+    border: 2px solid var(--accent-yellow);
     padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    border-radius: 2px;
+    font-size: 0.85rem;
+    font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 25px;
     letter-spacing: 1.5px;
@@ -248,7 +218,7 @@ span {
 .hero-benefits li {
     font-size: 1.05rem;
     margin-bottom: 12px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--white);
     display: flex;
     align-items: center;
@@ -268,13 +238,7 @@ span {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
-    transform: perspective(1000px) rotateY(-15deg);
-    transition: transform 0.5s ease;
-}
-
-.hero-image:hover img {
-    transform: perspective(1000px) rotateY(-5deg);
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.9));
 }
 
 /* General Sections */
@@ -284,8 +248,8 @@ section {
 
 /* Problem Solution */
 .problem-solution {
-    background-color: var(--bg-alt);
-    border-top: 1px solid #1a1a1a;
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--card-border);
 }
 
 .content-grid {
@@ -307,12 +271,10 @@ section {
 
 .text-block.highlight {
     background: var(--card-bg);
-    backdrop-filter: var(--glass-blur);
     padding: 40px;
-    border-radius: 12px;
-    border: 1px solid var(--card-border);
-    border-left: 5px solid var(--accent-yellow);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-radius: 2px;
+    border: 2px solid var(--card-border);
+    border-left: 6px solid var(--accent-yellow);
 }
 
 .text-block.highlight p {
@@ -321,11 +283,12 @@ section {
     color: var(--white);
     margin-bottom: 20px;
     font-family: var(--font-heading);
+    text-transform: uppercase;
 }
 
 .author-quote {
     display: block;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--accent-yellow);
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -334,7 +297,8 @@ section {
 
 /* Features */
 .what-you-learn {
-    background-color: transparent;
+    background-color: var(--bg-alt);
+    border-bottom: 2px solid var(--card-border);
 }
 
 .features-grid {
@@ -345,17 +309,15 @@ section {
 
 .feature-card {
     background: var(--card-bg);
-    backdrop-filter: var(--glass-blur);
     padding: 40px 30px;
-    border-radius: 12px;
-    border: 1px solid var(--card-border);
-    transition: all 0.3s ease;
+    border-radius: 2px;
+    border: 2px solid var(--card-border);
+    transition: all 0.15s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(245, 197, 24, 0.3);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(245, 197, 24, 0.05);
+    border-color: var(--accent-yellow);
+    background: #000;
 }
 
 .feature-number {
@@ -377,20 +339,12 @@ section {
 
 /* Guarantee */
 .guarantee {
-    background: var(--gold-gradient);
+    background: var(--accent-yellow);
     color: #000;
     padding: 70px 0;
     position: relative;
-    overflow: hidden;
-}
-
-.guarantee::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('hero-bg.png');
-    opacity: 0.05;
-    mix-blend-mode: multiply;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
 }
 
 .guarantee-content {
@@ -404,27 +358,26 @@ section {
 
 .guarantee-icon {
     font-size: 5rem;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    color: #000;
 }
 
 .guarantee-text h2 {
     color: #000;
-    text-transform: none;
     margin-bottom: 15px;
     font-weight: 900;
 }
 
 .guarantee-text p {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
     max-width: 600px;
-    color: rgba(0,0,0,0.8);
+    color: #000;
 }
 
 /* Author */
 .author {
-    background-color: var(--bg-alt);
-    border-bottom: 1px solid #1a1a1a;
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--card-border);
 }
 
 .author-container {
@@ -442,9 +395,9 @@ section {
 .author-image img {
     width: 100%;
     height: auto;
-    border-radius: 12px;
-    border: 2px solid rgba(245, 197, 24, 0.5);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px rgba(245, 197, 24, 0.1);
+    border-radius: 2px;
+    border: 4px solid var(--accent-yellow);
+    filter: grayscale(100%) contrast(1.2);
 }
 
 .author-text {
@@ -459,13 +412,13 @@ section {
 
 .author-text p {
     font-size: 1.15rem;
-    color: #b0b0b0;
+    color: var(--text-muted);
 }
 
 /* CTA Section / Price Box */
 .cta-section {
     text-align: center;
-    background-color: transparent;
+    background-color: var(--bg-alt);
     padding: 120px 0;
 }
 
@@ -484,30 +437,20 @@ section {
 }
 
 .price-box {
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(20px);
+    background: #000;
     padding: 50px;
     display: inline-block;
-    border-radius: 16px;
-    border: 1px solid rgba(245, 197, 24, 0.3);
+    border-radius: 2px;
+    border: 3px solid var(--accent-yellow);
     max-width: 480px;
     width: 100%;
     text-align: left;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 40px rgba(245, 197, 24, 0.1);
     position: relative;
-    overflow: hidden;
-}
-
-.price-box::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 5px;
-    background: var(--gold-gradient);
 }
 
 .price-header {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 900;
     color: var(--white);
     margin-bottom: 30px;
     text-align: center;
@@ -523,7 +466,7 @@ section {
 
 .price-benefits .value-item {
     padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--card-border);
     font-size: 1rem;
     display: flex;
     justify-content: space-between;
@@ -536,7 +479,8 @@ section {
     align-items: flex-start;
     gap: 10px;
     line-height: 1.4;
-    color: var(--text-color);
+    color: var(--white);
+    font-weight: 600;
 }
 
 .item-desc i {
@@ -546,9 +490,9 @@ section {
 }
 
 .item-price {
-    color: #888;
+    color: var(--text-muted);
     white-space: nowrap;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .total-original {
@@ -557,14 +501,14 @@ section {
     align-items: center;
     padding-top: 20px;
     margin-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-weight: 700;
+    border-top: 2px solid var(--card-border);
+    font-weight: 800;
     font-size: 1.1rem;
     color: var(--white);
 }
 
 .total-price {
-    color: #888;
+    color: var(--text-muted);
     white-space: nowrap;
 }
 
@@ -578,7 +522,7 @@ section {
 }
 
 .currency {
-    font-weight: 700;
+    font-weight: 800;
     color: var(--text-muted);
     margin-right: 8px;
 }
@@ -587,11 +531,11 @@ section {
     font-size: 4.5rem;
     line-height: 1;
     color: var(--accent-yellow);
-    text-shadow: 0 0 20px rgba(245, 197, 24, 0.3);
+    font-weight: 900;
 }
 
 .cents {
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .secure {
@@ -603,12 +547,13 @@ section {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    font-weight: 600;
 }
 
 /* FAQ Section */
 .faq {
-    background-color: var(--bg-alt);
-    border-top: 1px solid #1a1a1a;
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--card-border);
 }
 
 .faq-grid {
@@ -621,16 +566,14 @@ section {
 
 .faq-item {
     background: var(--card-bg);
-    backdrop-filter: var(--glass-blur);
     padding: 35px;
-    border-radius: 12px;
-    border: 1px solid var(--card-border);
-    transition: transform 0.2s ease;
+    border-radius: 2px;
+    border: 2px solid var(--card-border);
+    transition: all 0.15s ease;
 }
 
 .faq-item:hover {
-    transform: translateX(5px);
-    border-color: rgba(255,255,255,0.1);
+    border-color: var(--accent-yellow);
 }
 
 .faq-item h3 {
@@ -656,7 +599,6 @@ footer {
     background-color: #000;
     padding: 60px 0 40px;
     text-align: center;
-    border-top: 1px solid #1a1a1a;
 }
 
 .logo-footer {
