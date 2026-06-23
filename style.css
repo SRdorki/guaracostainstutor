@@ -395,7 +395,9 @@ section {
 .author-image img {
     width: 100%;
     height: auto;
-    border-radius: 2px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
     border: 4px solid var(--accent-yellow);
 }
 
